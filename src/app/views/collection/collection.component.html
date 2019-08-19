@@ -1,0 +1,46 @@
+<div class="collection">
+    <div class="collection__description">
+        <div class="collection__description__text">{{ descriptionText }}</div>
+    </div>
+    <div class="collection__toolbar">
+        <div class="collection__toolbar__paging">
+            <h1>Men's Oxfords & Lace-Ups</h1>
+            <div class="pagination">
+                <div class="pagination__info">Showing 1-60 of 640</div>
+                <ul class="pagination__list" role="button">
+                    <li class="pagination__page">&#9668;</li>
+                    <li class="pagination__page">1</li>
+                    <li class="pagination__page">2</li>
+                    <li class="pagination__page">3</li>
+                    <li class="pagination__page">4</li>
+                    <li class="pagination__page">5</li>
+                    <li class="pagination__page">...</li>
+                    <li class="pagination__page">11</li>
+                    <li class="pagination__page">&#9658;</li>
+                </ul>
+            </div>
+        </div>
+        <div class="collection__toolbar__filters">
+            <div class="store-pickup">
+                <label class="checkbox__label">
+                    <input type="checkbox" />
+                    <span class="checkbox"></span>
+                    NEED IT TODAY?
+                </label>
+                <div>
+                    Available at {{ currentStore }} <a href="/">Change Store</a>
+                </div>
+            </div>
+            <div class="collection__toolbar__buttons">
+                <button class="button button__secondary">Filters</button>
+                <button class="button button__secondary">
+                    Sort By: {{ currentSort }}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="product__grid">
+        <app-product-tile *ngFor="let product of products" [product]="product">
+        </app-product-tile>
+    </div>
+</div>

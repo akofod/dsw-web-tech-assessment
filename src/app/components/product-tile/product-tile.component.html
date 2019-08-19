@@ -1,0 +1,21 @@
+<div class="product__tile">
+    <a class="product__tile__link" href="/">
+        <img
+            class="product__tile__image"
+            [src]="'assets/images/products/' + product.id + '.jpg'"
+        />
+        <div class="product__tile__brand">{{ product.brand }}</div>
+        <div class="product__tile__text">{{ product.name }}</div>
+        <div class="product__tile__price">
+            {{ product.price | currency }}
+        </div>
+        <div class="product__tile__compare" *ngIf="product.compValue">
+            <small> Comp. value {{ product.compValue | currency }} </small>
+        </div>
+        <app-rating *ngIf="product.rating" [value]="product.rating">
+        </app-rating>
+    </a>
+    <div class="product__tile__footer">
+        <button class="button button__primary">Quick Add</button>
+    </div>
+</div>
